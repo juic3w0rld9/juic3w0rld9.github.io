@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML Form Elements</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { border: 1px solid #555; padding: 4px; text-align: left; vertical-align: top; }
+  th { text-align: center; }
+</style>
+</head>
+<body>
+  <h2>HTML Form Elements</h2>
+  <form>
+  <table>
+    <tr><th>Form Elements</th><th>Sample Output</th></tr>
+    <tr><td>&lt;input type="text"&gt;</td><td>Text Input: <input type="text" placeholder="Enter plain text"></td></tr>
+    <tr><td>&lt;input type="password"&gt;</td><td>Password Input: <input type="password" placeholder="Enter password"></td></tr>
+    <tr><td>&lt;input type="email"&gt;</td><td>Email Input: <input type="email" value="user@example.com"></td></tr>
+    <tr><td>&lt;input type="url"&gt;</td><td>URL Input: <input type="url" value="https://example.com"></td></tr>
+    <tr><td>&lt;input type="tel"&gt;</td><td>Telephone Input: <input type="tel" value="123-456-7890"></td></tr>
+    <tr><td>&lt;input type="search"&gt;</td><td>Search Input: <input type="search" placeholder="Search site..."></td></tr>
+    <tr><td>&lt;textarea&gt;</td><td>Textarea:<br><textarea rows="4" cols="30" placeholder="Type your biography here..."></textarea></td></tr>
+    <tr><td>&lt;input type="number"&gt;</td><td>Number Input: <input type="number" value="25"></td></tr>
+    <tr><td>&lt;input type="range"&gt;</td><td>Range Input: <input type="range" min="0" max="100" value="50"></td></tr>
+    <tr><td>&lt;input type="date"&gt;</td><td>Date Input: <input type="date"></td></tr>
+    <tr><td>&lt;input type="time"&gt;</td><td>Time Input: <input type="time"></td></tr>
+    <tr><td>&lt;input type="datetime-local"&gt;</td><td>Date &amp; Time Local: <input type="datetime-local"></td></tr>
+    <tr><td>&lt;input type="month"&gt;</td><td>Month Input: <input type="month"></td></tr>
+    <tr><td>&lt;input type="week"&gt;</td><td>Week Input: <input type="week"></td></tr>
+    <tr><td>&lt;input type="checkbox"&gt;</td><td><label><input type="checkbox"> I agree to the terms and conditions</label></td></tr>
+    <tr><td>Multiple Checkboxes</td><td>Hobbies:<br>
+      <label><input type="checkbox"> Reading</label>
+      <label><input type="checkbox"> Sports</label>
+      <label><input type="checkbox" checked> Coding</label></td></tr>
+    <tr><td>&lt;input type="radio"&gt;</td><td>Contact Preference:<br>
+      <label><input type="radio" name="contact" checked> Email</label>
+      <label><input type="radio" name="contact"> Phone</label>
+      <label><input type="radio" name="contact"> Mail</label></td></tr>
+    <tr><td>&lt;select&gt;</td><td>Select Dropdown:
+      <select><option>-- Select a Country --</option><option>Philippines</option><option>Japan</option><option>USA</option></select></td></tr>
+    <tr><td>&lt;select multiple&gt;</td><td>Multiple Select Box:<br>
+      <select multiple size="4"><option selected>HTML5</option><option selected>CSS3</option><option>JavaScript</option><option>SQL</option></select></td></tr>
+    <tr><td>&lt;datalist&gt;</td><td>Datalist Input:
+      <input list="browsers" placeholder="Type or choose a browser">
+      <datalist id="browsers"><option value="Chrome"><option value="Firefox"><option value="Edge"><option value="Safari"></datalist></td></tr>
+    <tr><td>&lt;input type="file"&gt;</td><td>File Input: <input type="file"></td></tr>
+    <tr><td>&lt;input type="color"&gt;</td><td>Color Picker: <input type="color" value="#ff0000"></td></tr>
+    <tr><td>&lt;input type="hidden"&gt;</td><td><input type="hidden" value="secret">Hidden input — no visible output.</td></tr>
+    <tr><td>&lt;output&gt;</td><td>
+      <span oninput="o.value = parseInt(a.value) + parseInt(b.value)">
+      A: <input type="number" id="a" value="10" style="width:50px"> +
+      B: <input type="number" id="b" value="20" style="width:50px"> =
+      <output id="o">30</output></span></td></tr>
+    <tr><td>&lt;meter&gt;</td><td>Meter Element: <meter value="0.6" min="0" max="1" low="0.3" high="0.7" optimum="0.9"></meter></td></tr>
+    <tr><td>&lt;progress&gt;</td><td>Progress Element: <progress value="70" max="100"></progress></td></tr>
+    <tr><td>&lt;input type="submit"&gt;</td><td><input type="submit" value="Submit Input Button"></td></tr>
+    <tr><td>&lt;input type="reset"&gt;</td><td><input type="reset" value="Reset Input Button"></td></tr>
+    <tr><td>&lt;input type="button"&gt;</td><td><input type="button" value="Plain Input Button"></td></tr>
+    <tr><td>&lt;input type="image"&gt;</td><td>Image Submit Button:<br>
+      <input type="image" alt="Submit" width="60" height="25"
+        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='25'><rect width='60' height='25' fill='black'/><text x='30' y='17' fill='white' font-size='11' text-anchor='middle' font-family='Arial'>Submit</text></svg>"></td></tr>
+    <tr><td>&lt;button type="submit"&gt;</td><td><button type="submit">Submit Button Tag</button></td></tr>
+    <tr><td>&lt;button type="reset"&gt;</td><td><button type="reset">Reset Button Tag</button></td></tr>
+    <tr><td>&lt;button type="button"&gt;</td><td><button type="button">Custom Button Tag</button></td></tr>
+  </table>
+  </form>
+  <p><a href="Juice.html">Home</a></p>
+</body>
+</html>
