@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discount Calculator</title>
+<style>
+  body { font-family: Roboto, Arial, sans-serif; margin: 0; padding: 20px; background: #fff; }
+  .card { max-width: 480px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  h1 { margin-top: 0; }
+  label, .caption { display: block; color: #64748b; font-weight: bold; text-transform: uppercase; font-size: .95em; margin-top: 16px; }
+  input { width: 100%; padding: 14px; font-size: 1em; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; margin-top: 6px; }
+  .value { font-size: 1.4em; font-weight: bold; margin-top: 4px; }
+  .buttons { display: flex; gap: 16px; margin-top: 24px; }
+  button { flex: 1; padding: 14px; font-size: 1.1em; font-weight: bold; color: #fff; border: 0; border-radius: 6px; }
+  .compute { background: #f97316; }
+  .reset { background: #64748b; }
+  .credit { margin-top: 20px; }
+  a { color: #000; font-size: 1.2em; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Discount Calculator</h1>
+
+    <label for="price">Price before discount</label>
+    <input type="number" id="price" min="0" step="any">
+
+    <label for="discount">Discount (%)</label>
+    <input type="number" id="discount" min="0" max="100" step="any">
+
+    <span class="caption">Price after discount</span>
+    <div class="value" id="after">₱ 0.00</div>
+
+    <span class="caption">Saved amount</span>
+    <div class="value" id="saved">₱ 0.00</div>
+
+    <div class="buttons">
+      <button class="compute" onclick="compute()">Compute</button>
+      <button class="reset" onclick="resetAll()">Reset</button>
+    </div>
+
+    <div class="caption credit">Programmed by: Your Name, Section</div>
+    <p><a href="juice.html">← Home</a></p>
+  </div>
+
+<script>
+  const peso = n => '₱ ' + n.toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  function compute() {
+    const price = parseFloat(document.getElementById('price').value);
+    const disc = parseFloat(document.getElementById('discount').value);
+    if (isNaN(price) || isNaN(disc)) { alert('Please enter both values.'); return; }
+    const saved = price * (disc / 100);
+    document.getElementById('saved').textContent = peso(saved);
+    document.getElementById('after').textContent = peso(price - saved);
+  }
+  function resetAll() {
+    document.getElementById('price').value = '';
+    document.getElementById('discount').value = '';
+    document.getElementById('after').textContent = peso(0);
+    document.getElementById('saved').textContent = peso(0);
+  }
+</script>
+</body>
+</html>
