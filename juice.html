@@ -1,18 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Juice WRLD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melvin Smiley S. Nosis - Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Navigation Bar - Purple Theme */
+        nav {
+            background-color: #2e104d; /* Dark Purple Bar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 12px 24px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* Hover Effect */
+        nav a:hover {
+            background-color: #4a1e78;
+        }
+
+        /* Active Tab Styling with Gold/Yellow accent bar */
+        nav li.active a {
+            background-color: #5b2893;
+            color: #ffffff;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Content Sections */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        p.subtitle {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Portfolio Links Formatting */
+        .portfolio-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .portfolio-list li {
+            margin-bottom: 6px;
+        }
+
+        .portfolio-list a {
+            color: #2020a0;
+            text-decoration: underline;
+            font-size: 15px;
+        }
+
+        .portfolio-list a:hover {
+            color: #5b2893;
+        }
+    </style>
 </head>
 <body>
-  <h1> Melvin Smiley S. Nosis</h1>
-  <p>12 Cooper</p>
 
-  <a href="schedule.html"> Cooper Schedule </a><br>
-  <a href="form-elements.html">Form Elements</a><br>
-  <a href="portal-login.html">Portal Login </a><br>
-  <a href="calculator.html">Calculator </a><br>
-  <a href="discount.html">Discount Calculator</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li class="nav-item active" onclick="showPage('home', this)"><a href="#home">Home</a></li>
+            <li class="nav-item" onclick="showPage('about', this)"><a href="#about">About</a></li>
+            <li class="nav-item" onclick="showPage('gallery', this)"><a href="#gallery">Gallery</a></li>
+            <li class="nav-item" onclick="showPage('portfolio', this)"><a href="#portfolio">Portfolio</a></li>
+            <li class="nav-item" onclick="showPage('contact', this)"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content Container -->
+    <div class="container">
+        
+        <!-- HOME PAGE -->
+        <div id="home" class="page-content active">
+            <h1>Melvin Smiley S. Nosis</h1>
+            <p class="subtitle">12 - Cooper</p>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about" class="page-content">
+            <h1>About Page</h1>
+        </div>
+
+        <!-- GALLERY PAGE -->
+        <div id="gallery" class="page-content">
+            <h1>Gallery Page</h1>
+        </div>
+
+        <!-- PORTFOLIO PAGE -->
+        <div id="portfolio" class="page-content">
+            <ul class="portfolio-list">
+                <li><a href="#">Class Schedule</a></li>
+                <li><a href="#">Form Elements</a></li>
+                <li><a href="#">Portal Login</a></li>
+                <li><a href="#">Calculator</a></li>
+                <li><a href="#">Discount Calculator</a></li>
+                <li><a href="#">.NET Developer Profile</a></li>
+            </ul>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact" class="page-content">
+            <h1>Contact Page</h1>
+        </div>
+
+    </div>
+
+    <!-- JavaScript to Handle Tab Switching -->
+    <script>
+        function showPage(pageId, element) {
+            // Hide all sections
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+
+            // Show selected section & set active nav tab
+            document.getElementById(pageId).classList.add('active');
+            element.classList.add('active');
+        }
+    </script>
+
 </body>
-</html>
+                      </html>
+                      
