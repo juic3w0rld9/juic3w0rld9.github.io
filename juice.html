@@ -17,9 +17,9 @@
             color: #000000;
         }
 
-        /* Navigation Bar - Purple Theme */
+        
         nav {
-            background-color: #2e104d; /* Dark Purple Bar */
+            background-color: #2e104d;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,19 +48,19 @@
             transition: background-color 0.2s, color 0.2s;
         }
 
-        /* Hover Effect */
+        
         nav a:hover {
             background-color: #4a1e78;
         }
 
-        /* Active Tab Styling with Gold/Yellow accent bar */
+    
         nav li.active a {
             background-color: #5b2893;
             color: #ffffff;
             border-bottom: 3px solid #ffd700;
         }
 
-        /* Main Content Container */
+    
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -68,7 +68,7 @@
             padding: 0 20px;
         }
 
-        /* Content Sections */
+        
         .page-content {
             display: none;
         }
@@ -88,7 +88,6 @@
             color: #333;
         }
 
-        /* Portfolio Links Formatting */
         .portfolio-list {
             list-style: none;
             margin-top: 20px;
@@ -111,7 +110,7 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    
     <nav>
         <ul>
             <li class="nav-item active" onclick="showPage('home', this)"><a href="#home">Home</a></li>
@@ -122,56 +121,49 @@
         </ul>
     </nav>
 
-    <!-- Page Content Container -->
+
     <div class="container">
         
-        <!-- HOME PAGE -->
+ 
         <div id="home" class="page-content active">
             <h1>Melvin Smiley S. Nosis</h1>
             <p class="subtitle">12 - Cooper</p>
         </div>
 
-        <!-- ABOUT PAGE -->
+
         <div id="about" class="page-content">
             <h1>About Page</h1>
         </div>
 
-        <!-- GALLERY PAGE -->
         <div id="gallery" class="page-content">
             <h1>Gallery Page</h1>
         </div>
 
-        <!-- PORTFOLIO PAGE -->
+        
         <div id="portfolio" class="page-content">
             <ul class="portfolio-list">
-                <li><a href="#">Class Schedule</a></li>
-                <li><a href="#">Form Elements</a></li>
-                <li><a href="#">Portal Login</a></li>
-                <li><a href="#">Calculator</a></li>
-                <li><a href="#">Discount Calculator</a></li>
-                <li><a href="#">.NET Developer Profile</a></li>
+                <li><a href="schedule.html">Class Schedule</a></li>
+                <li><a href="form-elements.html">Form Elements</a></li>
+                <li><a href="portal-login.html">Portal Login</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="discount.html">Discount Calculator</a></li>
             </ul>
         </div>
-
-        <!-- CONTACT PAGE -->
+        
         <div id="contact" class="page-content">
             <h1>Contact Page</h1>
         </div>
 
     </div>
-
-    <!-- JavaScript to Handle Tab Switching -->
-    <script>
+<script>
         function showPage(pageId, element) {
-            // Hide all sections
+            
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active'));
-
-            // Remove active class from all nav items
+            
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
 
-            // Show selected section & set active nav tab
             document.getElementById(pageId).classList.add('active');
             element.classList.add('active');
         }
