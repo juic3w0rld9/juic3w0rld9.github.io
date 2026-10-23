@@ -69,5 +69,12 @@
     "age": 17,
     "section": "12 Cooper",
     "image": "bauto.png"
+  },
+    {
+    "lrn": "999",
+    "name": "Juice Wrld",
+    "age": 17,
+    "section": "Chicago",
+    "image": "lnd.png"
   }
 ]
