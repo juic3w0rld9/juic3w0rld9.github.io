@@ -11,9 +11,9 @@ body {
 }
 
 nav {
-    background-color: #2e104d; /* Dark Purple Header */
+    background-color: #2e104d;
     display: flex;
-    justify-content: center; /* Centers the navigation links */
+    justify-content: center;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     width: 100%;
@@ -46,7 +46,7 @@ nav a:hover {
 }
 
 nav li.active a {
-    background-color: #5b2893; /* Active Purple */
+    background-color: #5b2893;
     color: #ffffff;
     border-bottom: 3px solid #ffd700;
 }
@@ -54,7 +54,7 @@ nav li.active a {
 .container {
     max-width: 1000px;
     margin: 40px auto;
-    text-align: center; /* Centers text inside the container */
+    text-align: center;
     padding: 0 15px;
 }
 
@@ -79,7 +79,6 @@ p.subtitle {
     text-align: center;
 }
 
-/* --- CSS GRID FOR PORTFOLIO ITEMS --- */
 .portfolio-grid {
     list-style: none;
     display: grid;
@@ -88,7 +87,7 @@ p.subtitle {
     margin-top: 20px;
 }
 
-/* Responsive design for smaller screens/mobile */
+
 @media (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -106,10 +105,10 @@ p.subtitle {
     width: 100%;
     min-height: 55px;
     padding: 8px 10px;
-    background-color: #f3e5f5; /* Soft light purple card background */
-    border: 1px solid #7b1fa2; /* Purple border */
+    background-color: #f3e5f5;
+    border: 1px solid #7b1fa2;
     border-radius: 8px;
-    color: #4a1e78; /* Dark purple text */
+    color: #4a1e78;
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
