@@ -11,12 +11,12 @@ body {
 }
 
 nav {
-    background-color: #006400;
+    background-color: #2e104d; /* Dark Purple Header */
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* Centers the navigation links */
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    padding-left: 10px;
+    width: 100%;
 }
 
 nav ul {
@@ -32,7 +32,7 @@ nav li {
 
 nav a {
     display: block;
-    padding: 12px 16px;
+    padding: 12px 20px;
     color: #ffffff;
     text-decoration: none;
     font-size: 13px;
@@ -42,18 +42,19 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #3cb371;
+    background-color: #4a1e78;
 }
 
 nav li.active a {
-    background-color: #3cb371;
+    background-color: #5b2893; /* Active Purple */
     color: #ffffff;
+    border-bottom: 3px solid #ffd700;
 }
 
 .container {
     max-width: 1000px;
-    margin: 20px auto;
-    text-align: center;
+    margin: 40px auto;
+    text-align: center; /* Centers text inside the container */
     padding: 0 15px;
 }
 
@@ -69,13 +70,16 @@ h1 {
     font-size: 26px;
     margin-bottom: 12px;
     font-weight: bold;
+    text-align: center;
 }
 
 p.subtitle {
     font-size: 18px;
     color: #333;
+    text-align: center;
 }
 
+/* --- CSS GRID FOR PORTFOLIO ITEMS --- */
 .portfolio-grid {
     list-style: none;
     display: grid;
@@ -84,6 +88,7 @@ p.subtitle {
     margin-top: 20px;
 }
 
+/* Responsive design for smaller screens/mobile */
 @media (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -101,10 +106,10 @@ p.subtitle {
     width: 100%;
     min-height: 55px;
     padding: 8px 10px;
-    background-color: #fffde7;
-    border: 1px solid #d4af37;
+    background-color: #f3e5f5; /* Soft light purple card background */
+    border: 1px solid #7b1fa2; /* Purple border */
     border-radius: 8px;
-    color: #a52a2a;
+    color: #4a1e78; /* Dark purple text */
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
@@ -116,5 +121,5 @@ p.subtitle {
 .portfolio-grid a:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    background-color: #fff9c4;
-  }
+    background-color: #e1bee7;
+}
