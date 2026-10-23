@@ -76,5 +76,12 @@
     "age": 27,
     "section": "Chicago",
     "image": "lnd.png"
-  }
+  },
+      {
+    "lrn": "101010",
+    "name": "Argon",
+    "age": 17,
+    "section": "Billionaire Gang",
+    "image": "arhon.png"
+      }
 ]
