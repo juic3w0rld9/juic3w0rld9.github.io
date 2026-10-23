@@ -4,113 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melvin Smiley S. Nosis - Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        body {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        
-        nav {
-            background-color: #2e104d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            position: relative;
-        }
-
-        nav a {
-            display: block;
-            padding: 12px 24px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-        
-        nav a:hover {
-            background-color: #4a1e78;
-        }
-
-    
-        nav li.active a {
-            background-color: #5b2893;
-            color: #ffffff;
-            border-bottom: 3px solid #ffd700;
-        }
-
-    
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        
-        .page-content {
-            display: none;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        h1 {
-            font-size: 26px;
-            margin-bottom: 12px;
-            font-weight: bold;
-        }
-
-        p.subtitle {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .portfolio-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .portfolio-list li {
-            margin-bottom: 6px;
-        }
-
-        .portfolio-list a {
-            color: #2020a0;
-            text-decoration: underline;
-            font-size: 15px;
-        }
-
-        .portfolio-list a:hover {
-            color: #5b2893;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    
     <nav>
         <ul>
             <li class="nav-item active" onclick="showPage('home', this)"><a href="#home">Home</a></li>
@@ -121,15 +18,12 @@
         </ul>
     </nav>
 
-
     <div class="container">
         
- 
         <div id="home" class="page-content active">
             <h1>Melvin Smiley S. Nosis</h1>
             <p class="subtitle">12 - Cooper</p>
         </div>
-
 
         <div id="about" class="page-content">
             <h1>About Page</h1>
@@ -139,17 +33,19 @@
             <h1>Gallery Page</h1>
         </div>
 
-        
         <div id="portfolio" class="page-content">
-            <ul class="portfolio-list">
-                <li><a href="schedule.html">Class Schedule</a></li>
-                <li><a href="form-elements.html">Form Elements</a></li>
-                <li><a href="portal-login.html">Portal Login</a></li>
-                <li><a href="calculator.html">Calculator</a></li>
-                <li><a href="discount.html">Discount Calculator</a></li>
-                <li><a href="grid.html">Grid</a></li>
+            <ul class="portfolio-grid">
+                <li><a href="form-elements.html">Form Element</a></li>
                 <li><a href="junk.html">Login</a></li>
-                <li><a href="nesquik.html">Student List</a></li>
+                <li><a href="#">Console Example</a></li>
+                <li><a href="calculator.html">Sample Calculator</a></li>
+                <li><a href="discount.html">Discount Calculator</a></li>
+                <li><a href="#">.NET Developer Profile</a></li>
+                <li><a href="schedule.html">Class Schedule</a></li>
+                <li><a href="#">Class Schedule Styled</a></li>
+                <li><a href="nesquik.html">Student Array Drill</a></li>
+                <li><a href="grid.html">Grid Drill</a></li>
+                <li><a href="portal-login.html">Login Logic Drill</a></li>
             </ul>
         </div>
         
@@ -158,9 +54,9 @@
         </div>
 
     </div>
-<script>
+
+    <script>
         function showPage(pageId, element) {
-            
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active'));
             
@@ -173,5 +69,4 @@
     </script>
 
 </body>
-                      </html>
-                      
+</html>
