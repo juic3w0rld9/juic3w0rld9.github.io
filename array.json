@@ -1,0 +1,73 @@
+
+[
+  {
+    "lrn": "107985140204",
+    "name": "CRUZ, VAUGHN LESTAT, G.",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "von.png"
+  },
+  {
+    "lrn": "107883140206",
+    "name": "CONCEPCION, NYT ZEFHIRO CERILLO",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "nyt.png"
+  },
+  {
+    "lrn": "107974140650",
+    "name": "BERGADO, JULIUS CEAZAR, SALIMBAGAT",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "jujubeer.png"
+  },
+  {
+    "lrn": "108026140036",
+    "name": "DELA CRUZ, ZIANTINO LAO",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "tino.png"
+  },
+  {
+    "lrn": "108030238488",
+    "name": "ERANDIO, JOHN MARK REYES",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "erandio.png"
+  },
+  {
+    "lrn": "121634130005",
+    "name": "ROSALES, JETHRO, AMADAR",
+    "age": 18,
+    "section": "12 Cooper",
+    "image": "jet.png"
+  },
+  {
+    "lrn": "136601141090",
+    "name": "PAGLINAWAN, PRINCE LUSCIAN, LAXAMANA",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "ecnirp.png"
+  },
+  {
+    "lrn": "107990140098",
+    "name": "SALUGAO, RAILEY VALE, A.",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "rai.png"
+  },
+  {
+    "lrn": "424213150508",
+    "name": "PERALTA, DALE DANIELLE A.",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "dale.png"
+  },
+  {
+    "lrn": "407183150167",
+    "name": "BAUTO, KIANE CARLO S.",
+    "age": 17,
+    "section": "12 Cooper",
+    "image": "buto.png"
+  }
+]
