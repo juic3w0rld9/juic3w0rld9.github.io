@@ -3,37 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melvin Smiley S. Nosis - Website</title>
+    <title>Melvin Smiley S. Nosis - Portfolio</title>
     <link rel="stylesheet" href="juice.css">
 </head>
 <body>
 
     <nav>
         <ul>
-            <li class="nav-item active" onclick="showPage('home', this)"><a href="#home">Home</a></li>
-            <li class="nav-item" onclick="showPage('about', this)"><a href="#about">About</a></li>
-            <li class="nav-item" onclick="showPage('gallery', this)"><a href="#gallery">Gallery</a></li>
-            <li class="nav-item" onclick="showPage('portfolio', this)"><a href="#portfolio">Portfolio</a></li>
-            <li class="nav-item" onclick="showPage('contact', this)"><a href="#contact">Contact</a></li>
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+            <li class="nav-item active"><a href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        
-        <div id="home" class="page-content active">
-            <h1>Melvin Smiley S. Nosis</h1>
-            <p class="subtitle">12 - Cooper</p>
-        </div>
-
-        <div id="about" class="page-content">
-            <h1>About Page</h1>
-        </div>
-
-        <div id="gallery" class="page-content">
-            <h1>Gallery Page</h1>
-        </div>
-
-        <div id="portfolio" class="page-content">
+        <div id="portfolio" class="page-content active">
+            <h1>Portfolio</h1>
             <ul class="portfolio-grid">
                 <li><a href="form-elements.html">Form Element</a></li>
                 <li><a href="junk.html">Login Logic</a></li>
@@ -46,25 +33,7 @@
                 <li><a href="portal-login.html">Login</a></li>
             </ul>
         </div>
-        
-        <div id="contact" class="page-content">
-            <h1>Contact Page</h1>
-        </div>
-
     </div>
-
-    <script>
-        function showPage(pageId, element) {
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
-
-            document.getElementById(pageId).classList.add('active');
-            element.classList.add('active');
-        }
-    </script>
 
 </body>
 </html>
