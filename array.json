@@ -76,7 +76,7 @@
     "age": 17,
     "section": "Billionaire Gang",
     "image": "argon.png"
-  }
+  },
       {
     "lrn": "999",
     "name": "Juice Wrld",
@@ -90,5 +90,5 @@
     "age": 20,
     "section": "Florida",
     "image": "jah.png"
-  },
+  }
 ]
