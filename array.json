@@ -70,7 +70,14 @@
     "section": "12 Cooper",
     "image": "bauto.png"
   },
-    {
+  {
+    "lrn": "10290923",
+    "name": "Argon",
+    "age": 17,
+    "section": "Billionaire Gang",
+    "image": "argon.png"
+  }
+      {
     "lrn": "999",
     "name": "Juice Wrld",
     "age": 27,
@@ -79,9 +86,9 @@
   },
       {
     "lrn": "101010",
-    "name": "Argon",
-    "age": 17,
-    "section": "Billionaire Gang",
-    "image": "argon.png"
-      }
+    "name": "Jahseh Onfroy",
+    "age": 20,
+    "section": "Florida",
+    "image": "jah.png"
+  },
 ]
