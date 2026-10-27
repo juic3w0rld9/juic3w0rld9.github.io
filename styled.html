@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,204 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Schedule</title>
     <style>
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            color: #000;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-            text-align: center;
-        }
-
-        .table-container {
-            width: 100%;
-            max-width: 750px;
-            overflow-x: auto;
-            background-color: #ffffff;
-            padding: 10px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.05);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #ffffff;
-            font-size: 11px;
-            text-align: center;
-        }
-
-        th, td {
-            border: 1px solid #777777;
-            padding: 6px 4px;
-            vertical-align: middle;
-            text-align: center;
-            word-wrap: break-word;
-        }
-
-        .time-col {
-            width: 70px;
-            font-weight: bold;
-            font-size: 10px;
-            line-height: 1.2;
-        }
-
-        th {
-            font-weight: bold;
-            font-size: 11px;
-            padding: 8px 2px;
-        }
-
-        .subject-title {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 3px;
-            line-height: 1.2;
-        }
-
-        .teacher-name {
-            font-style: italic;
-            font-weight: bold;
-            font-size: 10px;
-            display: block;
-            line-height: 1.1;
-        }
-
-        .event-title {
-            font-weight: bold;
-            font-size: 11px;
-        }
-
-
-        .home-link {
-            margin-top: 15px;
-            font-size: 13px;
-            color: #0000ee;
-            text-decoration: underline;
-        }
-
-        .home-link:hover {
-            color: #0000aa;
-        }
+        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        h2 { margin-bottom: 20px; }
+        table { width: 100%; max-width: 750px; border-collapse: collapse; background: #fff; font-size: 11px; text-align: center; box-shadow: 0 0 5px rgba(0,0,0,0.05); }
+        th, td { border: 1px solid #777; padding: 6px 4px; vertical-align: middle; }
+        th { font-weight: bold; padding: 8px 2px; }
+        .time-col { width: 70px; font-weight: bold; font-size: 10px; }
+        .subject-title { font-weight: bold; display: block; margin-bottom: 3px; }
+        .teacher-name { font-style: italic; font-weight: bold; font-size: 10px; display: block; }
+        .event-title { font-weight: bold; }
+        a { margin-top: 15px; font-size: 13px; color: #00e; text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <h2>Class Schedule</h2>
 
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th class="time-col">Day</th>
-                    <th style="width: 18%;">Monday</th>
-                    <th style="width: 18%;">Tuesday</th>
-                    <th style="width: 18%;">Wednesday</th>
-                    <th style="width: 18%;">Thursday</th>
-                    <th style="width: 18%;">Friday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="time-col">12:30 PM</td>
-                    <td colspan="5" class="event-title">Arrival</td>
-                </tr>
+    <table>
+        <thead>
+            <tr>
+                <th class="time-col">Day</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time-col">12:30 PM</td>
+                <td colspan="5" class="event-title">Arrival</td>
+            </tr>
+            <tr>
+                <td class="time-col">12:30 - 2:10 PM</td>
+                <td colspan="5">
+                    <span class="subject-title">Computer Programming</span>
+                    <span class="teacher-name">DE VERA</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-col">2:10 - 3:00 PM</td>
+                <td>
+                    <span class="subject-title">Pagsulat sa Filipino sa Piling Larang</span>
+                    <span class="teacher-name">ODONO</span>
+                </td>
+                <td colspan="4">
+                    <span class="subject-title">Entrepreneurship</span>
+                    <span class="teacher-name">PAEZ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-col">3:00 - 3:15 PM</td>
+                <td colspan="5" class="event-title">Break</td>
+            </tr>
+            <tr>
+                <td class="time-col">3:15 - 4:05 PM</td>
+                <td>
+                    <span class="subject-title">Homeroom</span>
+                    <span class="teacher-name">MANTALA</span>
+                </td>
+                <td>
+                    <span class="subject-title">English For Academic and Professional Purposes</span>
+                    <span class="teacher-name">MANTALA</span>
+                </td>
+                <td rowspan="2">
+                    <span class="subject-title">Pagsulat sa Filipino sa Piling Larang</span>
+                    <span class="teacher-name">ODONO</span>
+                </td>
+                <td rowspan="2">
+                    <span class="subject-title">Physical Education and Health 4</span>
+                    <span class="teacher-name">DEMEGILLO</span>
+                </td>
+                <td>
+                    <span class="subject-title">Entrepreneurship</span>
+                    <span class="teacher-name">PAEZ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-col">4:05 - 4:55 PM</td>
+                <td colspan="2">
+                    <span class="subject-title">English For Academic and Professional Purposes</span>
+                    <span class="teacher-name">MANTALA</span>
+                </td>
+                <td>
+                    <span class="subject-title">Pagsulat sa Filipino sa Piling Larang</span>
+                    <span class="teacher-name">ODONO</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-col">4:55 - 5:45 PM</td>
+                <td></td>
+                <td colspan="2">
+                    <span class="subject-title">English For Academic and Professional Purposes</span>
+                    <span class="teacher-name">MANTALA</span>
+                </td>
+                <td>
+                    <span class="subject-title">Entrepreneurship</span>
+                    <span class="teacher-name">PAEZ</span>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="time-col">5:45 PM</td>
+                <td colspan="5" class="event-title">Departure</td>
+            </tr>
+        </tbody>
+    </table>
 
-                <tr>
-                    <td class="time-col">12:30<br>-<br>1:20 PM</td>
-                    <td rowspan="2" colspan="5">
-                        <span class="subject-title">Computer Programming</span>
-                        <span class="teacher-name">DE VERA</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="time-col">1:20<br>-<br>2:10 PM</td>
-                </tr>
-
-                <tr>
-                    <td class="time-col">2:10<br>-<br>3:00 PM</td>
-                    <td>
-                        <span class="subject-title">Pagsulat sa Filipino sa Piling Larang</span>
-                        <span class="teacher-name">ODONO</span>
-                    </td>
-                    <td colspan="4">
-                        <span class="subject-title">Entrepreneurship</span>
-                        <span class="teacher-name">PAEZ</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="time-col">3:00<br>-<br>3:15 PM</td>
-                    <td colspan="5" class="event-title">Break</td>
-                </tr>
-
-
-                <tr>
-                    <td class="time-col">3:15<br>-<br>4:05 PM</td>
-                    <td>
-                        <span class="subject-title">Homeroom</span>
-                        <span class="teacher-name">MANTALA</span>
-                    </td>
-                    <td>
-                        <span class="subject-title">English For Academic and Professional Purposes</span>
-                        <span class="teacher-name">MANTALA</span>
-                    </td>
-                    <td rowspan="2">
-                        <span class="subject-title">Pagsulat sa Filipino sa Piling Larang</span>
-                        <span class="teacher-name">ODONO</span>
-                    </td>
-                    <td rowspan="2">
-                        <span class="subject-title">Physical Education and Health 4</span>
-                        <span class="teacher-name">DEMEGILLO</span>
-                    </td>
-                    <td>
-                        <span class="subject-title">Entrepreneurship</span>
-                        <span class="teacher-name">PAEZ</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="time-col">4:05<br>-<br>4:55 PM</td>
-                    <td rowspan="2" colspan="2">
-                        <span class="subject-title">English For Academic and Professional Purposes</span>
-                        <span class="teacher-name">MANTALA</span>
-                    </td>
-                    <td>
-                        <span class="subject-title">Pagsulat sa Filipino sa Piling Larang</span>
-                        <span class="teacher-name">ODONO</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="time-col">4:55<br>-<br>5:45 PM</td>
-                    <td></td>
-                    <td>
-                        <span class="subject-title">Entrepreneurship</span>
-                        <span class="teacher-name">PAEZ</span>
-                    </td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td class="time-col">5:45 PM</td>
-                    <td colspan="5" class="event-title">Departure</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-  <p><a href="portfolio.html">Home</a></p>
+    <a href="portfolio.html">Home</a>
 </body>
 </html>
