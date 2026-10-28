@@ -1,66 +1,179 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Discount Calculator</title>
-<style>
-  body { font-family: Roboto, Arial, sans-serif; margin: 0; padding: 20px; background: #fff; }
-  .card { max-width: 480px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-  h1 { margin-top: 0; }
-  label, .caption { display: block; color: #64748b; font-weight: bold; text-transform: uppercase; font-size: .95em; margin-top: 16px; }
-  input { width: 100%; padding: 14px; font-size: 1em; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; margin-top: 6px; }
-  .value { font-size: 1.4em; font-weight: bold; margin-top: 4px; }
-  .buttons { display: flex; gap: 16px; margin-top: 24px; }
-  button { flex: 1; padding: 14px; font-size: 1.1em; font-weight: bold; color: #fff; border: 0; border-radius: 6px; }
-  .compute { background: #f97316; }
-  .reset { background: #64748b; }
-  .credit { margin-top: 20px; }
-  a { color: #000; font-size: 1.2em; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discount Calculator</title>
+  <style>
+    /* CSS Root Variables & Theme Palette */
+    :root {
+      --primary: #2563eb;          /* Main interactive element color (focus rings) */
+      --accent: #f97316;           /* Primary action button color */
+      --accent-hover: #ea580c;     /* Button color on hover state */
+      --bg-main: #fafafc;          /* Page background fallback */
+      --surface: #ffffff;          /* Card/Container background */
+      --text-main: #0f172a;        /* Primary body text color */
+      --text-muted: #64748b;       /* Muted text color for labels and secondary text */
+      --border: #e2e8f0;           /* Subtle border color */
+      --focus-ring: rgba(37, 99, 235, 0.2); /* Semi-transparent blue glow for input focus */
+    }
+
+    /* Base Body & Card Layout */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 28px;
+      background-color: var(--surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    }
+
+    #container {
+      margin-bottom: 20px;
+    }
+
+    /* Form Section Labels */
+    label {
+      display: block;              /* Forces label onto its own line above inputs */
+      margin: 10px 0 8px;          /* Top margin 10px, zero horizontal, bottom 8px */
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;    /* Standardizes text to all-caps */
+      letter-spacing: 0.05em;      /* Adds slight tracking for readability */
+    }
+
+    /* Output Displays */
+    output {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    /* Shared properties for both input and button controls */
+    input[type="number"],
+    input[type="button"] {
+      display: block;              /* Forces full-width stacking */
+      width: 100%;                 /* Fills the entire width of container */
+      box-sizing: border-box;       /* Includes padding and border in width calculations */
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s ease;   /* Smooth state changes */
+    }
+
+    /* Number Input Field */
+    input[type="number"] {
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      background-color: #fff;
+      outline: none;               /* Removes default browser outline */
+      margin-bottom: 12px;
+    }
+
+    /* Focus State for Number Input */
+    input[type="number"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--focus-ring);
+    }
+
+    /* Action Button Base Style */
+    input[type="button"] {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    /* Hover state for Button */
+    input[type="button"]:hover {
+      background-color: var(--accent-hover);
+      box-shadow: 0 4px 8px rgba(249, 115, 22, 0.3);
+    }
+
+    /* Active click/press state for Button */
+    input[type="button"]:active {
+      transform: translateY(1px);
+    }
+
+    /* Footer Label Styling */
+    .footer-label {
+      margin-top: 16px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Discount Calculator</h1>
+  <form>
+    <div id="container">
+      <h3>Discount Calculator</h3>
 
-    <label for="price">Price before discount</label>
-    <input type="number" id="price" min="0" step="any">
+      <label for="price">Price before discount</label>
+      <input type="number" id="price" step="0.01" min="0">
 
-    <label for="discount">Discount (%)</label>
-    <input type="number" id="discount" min="0" max="100" step="any">
+      <label for="discount">Discount (%)</label>
+      <input type="number" id="discount" step="0.01" min="0" max="100">
 
-    <span class="caption">Price after discount</span>
-    <div class="value" id="after">₱ 0.00</div>
+      <label for="price-after">Price after discount</label>
+      <output id="priceAfter">&#8369;0.00</output>
 
-    <span class="caption">Saved amount</span>
-    <div class="value" id="saved">₱ 0.00</div>
+      <label for="saved-amount">Saved amount</label>
+      <output id="savedAmount">&#8369;0.00</output>
 
-    <div class="buttons">
-      <button class="compute" onclick="compute()">Compute</button>
-      <button class="reset" onclick="resetAll()">Reset</button>
+      <input type="button" id="btnCompute" value="Compute">
+      <input type="button" id="btnReset" value="Reset" style="background-color: #64748b; margin-top: 4px;">
+
+      <label class="footer-label">Programmed by: Prince Luscian Paglinawan 12-Cooper</label>
     </div>
+  </form>
 
-    <div class="caption credit">Programmed by: Juice WRLD</div>
-    <p><a href="portfolio.html">← Home</a></p>
-  </div>
+  <script>
+    // DOM Element References
+    const thePrice = document.getElementById("price");
+    const theDiscount = document.getElementById("discount");
+    const priceAfterOutput = document.getElementById("priceAfter");
+    const savedAmountOutput = document.getElementById("savedAmount");
+    const theButton = document.getElementById("btnCompute");
+    const resetButton = document.getElementById("btnReset");
 
-<script>
-  const peso = n => '₱ ' + n.toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    // Calculation Function
+    function computeDiscount() {
+      const priceVal = parseFloat(thePrice.value) || 0;
+      const discountVal = parseFloat(theDiscount.value) || 0;
 
-  function compute() {
-    const price = parseFloat(document.getElementById('price').value);
-    const disc = parseFloat(document.getElementById('discount').value);
-    if (isNaN(price) || isNaN(disc)) { alert('Please enter both values.'); return; }
-    const saved = price * (disc / 100);
-    document.getElementById('saved').textContent = peso(saved);
-    document.getElementById('after').textContent = peso(price - saved);
-  }
-  function resetAll() {
-    document.getElementById('price').value = '';
-    document.getElementById('discount').value = '';
-    document.getElementById('after').textContent = peso(0);
-    document.getElementById('saved').textContent = peso(0);
-  }
-</script>
+      // Calculate saved amount and new total price
+      const savedAmount = priceVal * (discountVal / 100);
+      const priceAfter = priceVal - savedAmount;
+
+      // Display outputs
+      savedAmountOutput.innerHTML = "&#8369;" + savedAmount;
+      priceAfterOutput.innerHTML = "&#8369;" + priceAfter;
+    }
+
+    // Reset Function
+    function resetForm() {
+      thePrice.value = "";
+      theDiscount.value = "";
+      priceAfterOutput.innerHTML = "&#8369;0.00";
+      savedAmountOutput.innerHTML = "&#8369;0.00";
+    }
+
+    // Event Listeners
+    theButton.addEventListener('click', computeDiscount);
+    resetButton.addEventListener('click', resetForm);
+  </script>
+     <a href = "portfolio.html"> Back  </a>
 </body>
 </html>
