@@ -1,72 +1,250 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Form Elements</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 6px; }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  th, td { border: 1px solid #555; padding: 4px; text-align: left; vertical-align: top; }
-  th { text-align: center; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Form Elements </title>
 </head>
 <body>
-  <h2>Form Elements</h2>
-  <form>
-  <table>
-    <tr><th>Form Elements</th><th>Sample Output</th></tr>
-    <tr><td>&lt;input type="text"&gt;</td><td>Text Input: <input type="text" placeholder="Enter plain text"></td></tr>
-    <tr><td>&lt;input type="password"&gt;</td><td>Password Input: <input type="password" placeholder="Enter password"></td></tr>
-    <tr><td>&lt;input type="email"&gt;</td><td>Email Input: <input type="email" value="user@example.com"></td></tr>
-    <tr><td>&lt;input type="url"&gt;</td><td>URL Input: <input type="url" value="https://example.com"></td></tr>
-    <tr><td>&lt;input type="tel"&gt;</td><td>Telephone Input: <input type="tel" value="123-456-7890"></td></tr>
-    <tr><td>&lt;input type="search"&gt;</td><td>Search Input: <input type="search" placeholder="Search site..."></td></tr>
-    <tr><td>&lt;textarea&gt;</td><td>Textarea:<br><textarea rows="4" cols="30" placeholder="Type your biography here..."></textarea></td></tr>
-    <tr><td>&lt;input type="number"&gt;</td><td>Number Input: <input type="number" value="25"></td></tr>
-    <tr><td>&lt;input type="range"&gt;</td><td>Range Input: <input type="range" min="0" max="100" value="50"></td></tr>
-    <tr><td>&lt;input type="date"&gt;</td><td>Date Input: <input type="date"></td></tr>
-    <tr><td>&lt;input type="time"&gt;</td><td>Time Input: <input type="time"></td></tr>
-    <tr><td>&lt;input type="datetime-local"&gt;</td><td>Date &amp; Time Local: <input type="datetime-local"></td></tr>
-    <tr><td>&lt;input type="month"&gt;</td><td>Month Input: <input type="month"></td></tr>
-    <tr><td>&lt;input type="week"&gt;</td><td>Week Input: <input type="week"></td></tr>
-    <tr><td>&lt;input type="checkbox"&gt;</td><td><label><input type="checkbox"> I agree to the terms and conditions</label></td></tr>
-    <tr><td>Multiple Checkboxes</td><td>Hobbies:<br>
-      <label><input type="checkbox"> Reading</label>
-      <label><input type="checkbox"> Sports</label>
-      <label><input type="checkbox" checked> Coding</label></td></tr>
-    <tr><td>&lt;input type="radio"&gt;</td><td>Contact Preference:<br>
-      <label><input type="radio" name="contact" checked> Email</label>
-      <label><input type="radio" name="contact"> Phone</label>
-      <label><input type="radio" name="contact"> Mail</label></td></tr>
-    <tr><td>&lt;select&gt;</td><td>Select Dropdown:
-      <select><option>-- Select a Country --</option><option>Philippines</option><option>Japan</option><option>USA</option></select></td></tr>
-    <tr><td>&lt;select multiple&gt;</td><td>Multiple Select Box:<br>
-      <select multiple size="4"><option selected>HTML5</option><option selected>CSS3</option><option>JavaScript</option><option>SQL</option></select></td></tr>
-    <tr><td>&lt;datalist&gt;</td><td>Datalist Input:
-      <input list="browsers" placeholder="Type or choose a browser">
-      <datalist id="browsers"><option value="Chrome"><option value="Firefox"><option value="Edge"><option value="Safari"></datalist></td></tr>
-    <tr><td>&lt;input type="file"&gt;</td><td>File Input: <input type="file"></td></tr>
-    <tr><td>&lt;input type="color"&gt;</td><td>Color Picker: <input type="color" value="#ff0000"></td></tr>
-    <tr><td>&lt;input type="hidden"&gt;</td><td><input type="hidden" value="secret">Hidden input — no visible output.</td></tr>
-    <tr><td>&lt;output&gt;</td><td>
-      <span oninput="o.value = parseInt(a.value) + parseInt(b.value)">
-      A: <input type="number" id="a" value="10" style="width:50px"> +
-      B: <input type="number" id="b" value="20" style="width:50px"> =
-      <output id="o">30</output></span></td></tr>
-    <tr><td>&lt;meter&gt;</td><td>Meter Element: <meter value="0.6" min="0" max="1" low="0.3" high="0.7" optimum="0.9"></meter></td></tr>
-    <tr><td>&lt;progress&gt;</td><td>Progress Element: <progress value="70" max="100"></progress></td></tr>
-    <tr><td>&lt;input type="submit"&gt;</td><td><input type="submit" value="Submit Input Button"></td></tr>
-    <tr><td>&lt;input type="reset"&gt;</td><td><input type="reset" value="Reset Input Button"></td></tr>
-    <tr><td>&lt;input type="button"&gt;</td><td><input type="button" value="Plain Input Button"></td></tr>
-    <tr><td>&lt;input type="image"&gt;</td><td>Image Submit Button:<br>
-      <input type="image" alt="Submit" width="60" height="25"
-        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='25'><rect width='60' height='25' fill='black'/><text x='30' y='17' fill='white' font-size='11' text-anchor='middle' font-family='Arial'>Submit</text></svg>"></td></tr>
-    <tr><td>&lt;button type="submit"&gt;</td><td><button type="submit">Submit Button Tag</button></td></tr>
-    <tr><td>&lt;button type="reset"&gt;</td><td><button type="reset">Reset Button Tag</button></td></tr>
-    <tr><td>&lt;button type="button"&gt;</td><td><button type="button">Custom Button Tag</button></td></tr>
-  </table>
-  </form>
-  <p><a href="portfolio.html">Home</a></p>
+  <center>
+  <h1> HTML Form Elements </h1>
+  </center>
+    <center>
+        <form>
+          <table border = "1" width = "70%">
+            <thead>
+              <tr>
+                <th> Form Elements </th>
+                <th> Sample Output </th>
+              </tr>
+            </thead>
+
+            <tbody> 
+              <th colspan = "2"> <legend> Text Inputs </legend> </th>
+              <tr>
+               <td> <label for="basic-text">Text Input:</label> </td>
+               <td> <input type="text" id="basic-text" name="basic_text" placeholder="Enter plain text" maxlength="50"> </td>
+              </tr>
+
+              <tr> 
+                <td> <label for="user-password">Password Input:</label> </td>
+                <td> <input type="password" id="user-password" name="user_password" placeholder="Enter password" required> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="user-email">Email Input:</label> </td>
+                <td> <input type="email" id="user-email" name="user_email" placeholder="user@example.com" multiple> </td>
+              </tr>
+            
+              <tr>
+                <td> <label for="user-url">URL Input:</label> </td>
+                <td> <input type="url" id="user-url" name="user_url" placeholder="https://example.com"> </td>
+              </tr>
+            
+              <tr>
+                <td> <label for="user-tel">Telephone Input:</label> </td>
+                <td> <input type="tel" id="user-tel" name="user_tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="site-search">Search Input:</label> </td>
+                <td> <input type="search" id="site-search" name="site_search" placeholder="Search site..."> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="user-bio">Textarea (Multi-line Text):</label><br> </td>
+                <td> <textarea id="user-bio" name="user_bio" rows="4" cols="50" placeholder="Type your biography here..."></textarea> </td>
+              </tr>
+            </tbody>
+
+            <!--Categ 2-->
+            <tbody>
+              <th colspan = "2"> <legend> Numerical & Amp Range </legend> </th>
+              <tr>
+                <td> <label for="user-age">Number Input:</label> </td>
+                <td> <input type="number" id="user-age" name="user_age" min="1" max="120" step="1" value="25"> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="volume-level">Range Input (Slider):</label> </td>
+                <td> <input type="range" id="volume-level" name="volume_level" min="0" max="100" step="5" value="50"> </td>
+              </tr>
+            </tbody>
+
+            <!--Categ 3-->
+            <tbody>
+              <th colspan = "2"> <legend> DATE & TIME </legend> </th>
+              <tr>
+                <td> <label for="event-date">Date Input:</label> </td>
+                <td> <input type="date" id="event-date" name="event_date" min="2020-01-01" max="2030-12-31"> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="event-time">Time Input:</label> </td>
+                <td> <input type="time" id="event-time" name="event_time"> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="event-datetime">Date &amp; Time Local Input:</label> </td>
+                <td> <input type="datetime-local" id="event-datetime" name="event_datetime"> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="card-expiry-month">Month Input:</label> </td>
+                <td> <input type="month" id="card-expiry-month" name="card_expiry_month"> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="project-week">Week Input:</label> </td>
+                <td> <input type="week" id="project-week" name="project_week"> </td>
+              </tr>
+            </tbody>
+
+            <!--Categ 4-->
+            <tbody>
+              <th colspan = "2"> <legend> SELECTION CONTROLS </legend> </th>
+              <tr>
+                <td> <input type="checkbox" id="terms-agree" name="terms_agree" value="accepted"> </td>
+                <td> <label for="terms-agree">I agree to the terms and conditions (Single Checkbox)</label> </td>
+              </tr>
+
+              <tr>
+                <th colspan="2"> <span>Hobbies (Multiple Checkboxes):</span><br> </th>
+              </tr>
+
+              <tr>   
+                <td> <input type="checkbox" id="hobby-reading" name="hobbies" value="reading"> </td>
+                <td> <label for="hobby-reading">Reading</label> </td>
+              </tr>
+
+              <tr>
+                <td> <input type="checkbox" id="hobby-sports" name="hobbies" value="sports"> </td>
+                <td> <label for="hobby-sports">Sports</label> </td>
+              </tr>
+
+              <tr>
+                <td> <input type="checkbox" id="hobby-coding" name="hobbies" value="coding" checked> </td>
+                <td> <label for="hobby-coding">Coding</label> </td>
+              </tr>
+
+              <tr>
+                <th colspan="2"> <span>Contact Preference (Radio Buttons): </span> <br> </th>
+              </tr>
+
+              <tr>
+                <td> <input type="radio" id="pref-email" name="contact_pref" value="email" checked> </td>
+                <td> <label for="pref-email">Email</label> </td>
+              </tr>
+
+              <tr>
+                <td> <input type="radio" id="pref-phone" name="contact_pref" value="phone"> </td>
+                <td> <label for="pref-phone">Phone</label> </td>
+              </tr>
+
+              <tr>
+                <td> <input type="radio" id="pref-mail" name="contact_pref" value="mail"> </td>
+                <td> <label for="pref-mail">Mail</label> </td>
+              </tr>
+            </tbody>
+
+            <tr>
+                <td> <label for="country-select">Select Dropdown:</label> </td>
+                <td> <select id="country-select" name="country_select">
+                  <option value="" disabled selected>-- Select a Country --</option>
+                  <optgroup label="North America">
+                  <option value="us">United States</option>
+                  <option value="ca">Canada</option>
+                  </optgroup>
+                  <optgroup label="Europe">
+                  <option value="uk">United Kingdom</option>
+                  <option value="fr">France</option>
+                  </optgroup>
+                  </select> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="skills-select">Multiple Select Box:</label><br> </td>
+                <td> <select id="skills-select" name="skills_select" multiple size="4">
+                  <option value="html">HTML5</option>
+                  <option value="css">CSS3</option>
+                  <option value="js">JavaScript</option>
+                  <option value="sql">SQL</option>
+                  </select> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="browser-choice">Datalist Input (Autocompletion):</label> </td>
+                <td> <input list="browsers" id="browser-choice" name="browser_choice" placeholder="Type or choose a browser">
+                  <datalist id="browsers">
+                  <option value="Google Chrome">
+                  <option value="Mozilla Firefox">
+                  <option value="Apple Safari">
+                  <option value="Microsoft Edge">
+                  <option value="Brave">
+                  </datalist> </td>
+              </tr>
+            </tbody>
+            
+            <!--Categ 5-->
+            <tbody>
+              <th colspan = "2"> <legend> File & Amp; Media Inputs </legend> </th>
+              <tr>
+                <td> <label for="user-avatar">File Input (Single/Multiple):</label> </td>
+                <td> <input type="file" id="user-avatar" name="user_avatar" accept="image/*,.pdf" multiple> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="fav-color">Color Picker Input:</label> </td>
+                <td> <input type="color" id="fav-color" name="fav_color" value="#ff0000"> </td>
+              </tr>
+            </tbody>
+
+            <!--Categ 6-->
+            <tbody>
+              <th colspan = "2"> <legend> Special, Display & Amp; Hidden Elements </legend> </th>
+              <tr>
+                <td colspan = "2"> <input type="hidden" id="user-id" name="user_id" value="102938"> <label for="num-a">A:</label> <input type="number" id="num-a" value="10"> + <label for="num-b">B:</label> <input type="number" id="num-b" value="20"> = <output name="result" for="num-a num-b">30</output> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="disk-usage">Meter Element (Disk Usage):</label> </td>
+                <td> <meter id="disk-usage" min="0" max="100" low="33" high="66" optimum="80" value="75">75%</meter> </td>
+              </tr>
+
+              <tr>
+                <td> <label for="file-progress">Progress Element:</label> </td>
+                <td> <progress id="file-progress" max="100" value="60">60%</progress> </td>
+              </tr>
+            </tbody>
+
+            <!--Categ 7-->
+            <tbody>
+              <th colspan = "2" > <legend> Buttons & Amp; Actions </legend> </th>
+              <tr>
+                <td colspan = "2"> <input type="submit" value="Submit Input Button"> <input type="reset" value="Reset Input Button"> <input type="button" value="Plain Input Button" onclick="alert('Button clicked!')"> </td>
+              </tr>
+              
+              <tr>
+                <td> <label for="img-submit">Image Submit Button:</label><br> </td>
+                <td> <input type="image" id="img-submit" src="https://placehold.co/100x35/000000/FFFFFF?text=Submit" alt="Submit Image Button"> </td>
+              </tr>
+
+              <tr>
+                <td colspan = "2"> <button type="submit"><strong>Submit</strong> Button Tag</button>
+                <button type="reset"><em>Reset</em> Button Tag</button>
+                <button type="button">Custom <span>Button Tag</span></button> </td>
+              </tr>
+            </tbody>
+<tfoot> 
+  <tr>
+    <th colspan = "2"> JuiceWRLD </th>
+  </tr>
+</tfoot>
+          </table>
+        </form>
+    </center>
+  <hr>
+  <a href = "juice.html"> Back </a>
 </body>
 </html>
