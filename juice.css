@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +36,7 @@ nav a {
     padding: 12px 20px;
     color: #ffffff;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 14px; /* Increased from 10px */
     font-weight: bold;
     text-align: center;
     transition: background-color 0.2s, color 0.2s;
@@ -67,14 +68,14 @@ nav li.active a {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 26px; /* Increased from 20px */
     margin-bottom: 10px;
     font-weight: bold;
     text-align: center;
 }
 
 p.subtitle {
-    font-size: 10px;
+    font-size: 14px; /* Increased from 10px */
     color: #333;
     text-align: center;
 }
@@ -86,7 +87,6 @@ p.subtitle {
     gap: 10px;
     margin-top: 20px;
 }
-
 
 @media (max-width: 768px) {
     .portfolio-grid {
@@ -103,14 +103,14 @@ p.subtitle {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 55px;
-    padding: 8px 10px;
+    min-height: 42px; /* Made smaller from 55px */
+    padding: 6px 8px;   /* Made smaller from 8px 10px */
     background-color: #f3e5f5;
     border: 1px solid #7b1fa2;
     border-radius: 8px;
     color: #4a1e78;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;    /* Increased from 13px */
     font-weight: bold;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
