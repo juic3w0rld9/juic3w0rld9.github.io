@@ -1,41 +1,215 @@
-h1 {
-    text-align: center;
-    color: rgb(63, 5, 86);
+:root {
+    --bg-color: #0b0614;
+    --card-bg: #1f0836;
+    --purple-primary: #9d4edd;
+    --purple-glow: #c77dff;
+    --purple-border: #7b2cbf;
+    --text-color: #f3e8ff;
+    --error-color: #ff4d6d;
+    --success-color: #38b000;
 }
 
-.draggableContainer {
-    text-align: center;
-    border: 1px solid rgb(193, 22, 255);
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.droppableContainer {
-    text-align: center;
-    border: 1px solid rgb(193, 22, 255);
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.box, .droppable {
-    background-color: rgb(174, 7, 174);
-    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--purple-glow);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px var(--purple-primary);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #b8c0e0;
+    font-size: 1.1rem;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Draggable Items Area */
+.draggable-container {
+    background: var(--card-bg);
+    border: 2px dashed var(--purple-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    height: 30px;
-    width: 120px;
-    margin-right: 5px;
+    gap: 12px;
+    min-height: 100px;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.15);
 }
 
 .box {
+    background: linear-gradient(135deg, #7b2cbf, #5a189a);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
     cursor: grab;
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    border: 1px solid var(--purple-glow);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.draggableFormat {
-    font-weight: bold;
-    color: rgb(101, 6, 122);
-    border: 5px dotted rgb(153, 29, 184);
+.box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px var(--purple-glow);
 }
+
+.box:active {
+    cursor: grabbing;
+}
+
+/* Styles applied while dragging */
+.draggableFormat {
+    opacity: 0.4;
+    border: 2px dashed #ffffff;
+}
+
+/* Category Target Boxes */
+.droppable-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.droppable {
+    background: rgba(31, 8, 54, 0.6);
+    border: 2px dashed var(--purple-border);
+    border-radius: 12px;
+    padding: 1rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.droppable h2 {
+    font-size: 1.1rem;
+    color: var(--purple-glow);
+    border-bottom: 2px solid var(--purple-border);
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Active drop target highlighting */
+.droppable.drag-over {
+    background: rgba(157, 78, 221, 0.2);
+    border-color: var(--purple-glow);
+}
+
+/* Wrong placement animation */
+.box.shake {
+    animation: shake 0.4s ease-in-out;
+    border-color: var(--error-color);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+
+/* Footer Link */
+footer {
+    margin-top: 3rem;
+}
+
+.back-link {
+    color: var(--purple-glow);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--purple-glow);
+}
+
+/* Modal Popup */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border: 2px solid var(--purple-glow);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 0 30px var(--purple-primary);
+}
+
+.modal-content h2 {
+    color: var(--purple-glow);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+}
+
+.modal-content button {
+    background: var(--purple-primary);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-content button:hover {
+    background: var(--purple-glow);
+    }
