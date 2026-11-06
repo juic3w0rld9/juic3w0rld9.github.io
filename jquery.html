@@ -42,7 +42,6 @@
 
 <body>
 
-    <!-- 1. fadeToggle() Example -->
     <div class="example-box">
         <div id="Outer">
             <h1 style="color:white;">Nesquik</h1>
@@ -50,7 +49,6 @@
         <button id="btn-fade-toggle">Fade Toggle</button>
     </div>
 
-    <!-- 2. slideUp() Example -->
     <div class="example-box">
         <div>
             <p>Hide</p>
@@ -58,7 +56,7 @@
         </div>
     </div>
 
-    <!-- 3. hide() Example -->
+
     <div class="example-box">
         <div>
             <p class="rental-text">Rental</p>
@@ -66,7 +64,7 @@
         <button class="b1">Click me !</button>
     </div>
 
-    <!-- 4. fadeIn() & fadeOut() Example -->
+
     <div class="example-box">
         <h1 style="color:rgb(149, 0, 255);">Mr.</h1>
         <h2 class="heartbreak-text">Heartbreak</h2>
@@ -74,7 +72,6 @@
         <button class="btn-fade-in">Fade in</button>
     </div>
 
-    <!-- 5. delay() & animate() Example -->
     <div class="example-box">
         <div id="d">Never Switch</div>
         <p>
@@ -82,25 +79,25 @@
         </p>
     </div>
 
-    <!-- Combined jQuery Scripts -->
+
     <script>
         $(document).ready(function () {
-            // 1. fadeToggle()
+
             $("#btn-fade-toggle").click(function () {
                 $("#Outer").fadeToggle(1000);
             });
 
-            // 2. slideUp()
+
             $(".btn-slide-up").click(function () {
                 $(this).siblings("p").slideUp();
             });
 
-            // 3. hide()
+
             $(".b1").click(function () {
                 $(".rental-text").hide();
             });
 
-            // 4. fadeIn() and fadeOut()
+ 
             $(".btn-fade-out").click(function () {
                 $(".heartbreak-text").fadeOut();
             });
@@ -109,7 +106,7 @@
                 $(".heartbreak-text").fadeIn();
             });
 
-            // 5. delay() and animate()
+            
             $("#btn-delay").click(function () {
                 $("#d").animate({
                     height: "150px"
@@ -124,6 +121,7 @@
             });
         });
     </script>
+     <a href="portfolio.html" style="text-align: center;"> Back </a>
 
 </body>
 
