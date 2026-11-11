@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemPool = document.getElementById('item-pool');
     const totalItems = draggables.length;
 
-    // Attach Drag Start & End listeners to all draggable items
     draggables.forEach(draggable => {
         draggable.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', draggable.id);
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Configure drop zones
     droppables.forEach(zone => {
         zone.addEventListener('dragover', (e) => {
             e.preventDefault();
@@ -39,12 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetCategory = zone.getAttribute('data-category');
             const itemCategory = draggedElement.getAttribute('data-category');
 
-            // Validate match
             if (targetCategory === itemCategory) {
                 zone.appendChild(draggedElement);
                 checkWinCondition();
             } else {
-                // Flash error shake animation on wrong category
                 draggedElement.classList.add('shake');
                 setTimeout(() => {
                     draggedElement.classList.remove('shake');
@@ -53,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Allow items to be dragged back to the top pool area
     itemPool.addEventListener('dragover', (e) => e.preventDefault());
     itemPool.addEventListener('drop', (e) => {
         e.preventDefault();
@@ -64,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Win condition check
     function checkWinCondition() {
         let correctlyPlaced = 0;
         droppables.forEach(zone => {
