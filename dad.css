@@ -46,13 +46,12 @@ header p {
 
 main {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* Draggable Items Area */
 .draggable-container {
     background: var(--card-bg);
     border: 2px dashed var(--purple-border);
@@ -77,6 +76,7 @@ main {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     border: 1px solid var(--purple-glow);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
 }
 
 .box:hover {
@@ -88,17 +88,15 @@ main {
     cursor: grabbing;
 }
 
-/* Styles applied while dragging */
 .draggableFormat {
     opacity: 0.4;
     border: 2px dashed #ffffff;
 }
 
-/* Category Target Boxes */
 .droppable-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .droppable {
@@ -115,7 +113,7 @@ main {
 }
 
 .droppable h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--purple-glow);
     border-bottom: 2px solid var(--purple-border);
     padding-bottom: 5px;
@@ -124,13 +122,11 @@ main {
     pointer-events: none;
 }
 
-/* Active drop target highlighting */
 .droppable.drag-over {
     background: rgba(157, 78, 221, 0.2);
     border-color: var(--purple-glow);
 }
 
-/* Wrong placement animation */
 .box.shake {
     animation: shake 0.4s ease-in-out;
     border-color: var(--error-color);
@@ -142,7 +138,6 @@ main {
     40%, 80% { transform: translateX(8px); }
 }
 
-/* Footer Link */
 footer {
     margin-top: 3rem;
 }
@@ -159,7 +154,6 @@ footer {
     text-shadow: 0 0 8px var(--purple-glow);
 }
 
-/* Modal Popup */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -212,4 +206,4 @@ footer {
 
 .modal-content button:hover {
     background: var(--purple-glow);
-    }
+}
