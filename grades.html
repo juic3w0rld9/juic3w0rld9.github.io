@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +49,7 @@
                 row.insertCell().textContent = grades[i].grade;
                 var actionCell = row.insertCell();
                 actionCell.appendChild(makeUpdateButton(i));
+                actionCell.appendChild(makeDeleteButton(i)); 
             }
         }
 
@@ -58,6 +60,30 @@
                 loadForUpdate(index);
             });
             return button;
+        }
+
+        function makeDeleteButton(index) {
+            var button = document.createElement("button");
+            button.textContent = "Delete";
+            button.addEventListener("click", function () {
+                deleteGrade(index);
+            });
+            return button;
+        }
+
+        function deleteGrade(index) {
+            grades.splice(index, 1); 
+            localStorage.setItem("grades", JSON.stringify(grades)); 
+
+            selectedIndex = -1;
+            btnSave.value = "Save";
+            txtLRN.value = "";
+            txtName.value = "";
+            txtSubject.value = "";
+            txtGrade.value = "";
+
+            message.textContent = "Deleted.";
+            showGrades();
         }
 
         function loadForUpdate(index) {
@@ -81,7 +107,13 @@
                 return;
             }
 
-            var record = { lrn: lrn, name: name, subject: subject, grade: grade };
+            var numericGrade = Number(grade);
+            if (isNaN(numericGrade) || numericGrade < 0 || numericGrade > 100) {
+                message.textContent = "Grade must be between 0 and 100.";
+                return;
+            }
+
+            var record = { lrn: lrn, name: name, subject: subject, grade: numericGrade };
 
             if (selectedIndex === -1) {
                 grades.push(record);
@@ -102,10 +134,16 @@
             showGrades();
         }
 
+        txtGrade.addEventListener("input", function () {
+            if (this.value !== "") {
+                if (Number(this.value) > 100) this.value = 100;
+                if (Number(this.value) < 0) this.value = 0;
+            }
+        });
+
         btnSave.addEventListener("click", saveGrade);
 
         showGrades();
     </script>
-    <a href="portfolio.html" style="text-align: center;"> Back </a>
 </body>
 </html>
