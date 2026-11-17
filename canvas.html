@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Box Canvas</title>
+
+    <style>
+        #myDrawing {
+            border: solid 1px purple;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas height="500" width="1000" id="myDrawing"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myDrawing");
+        const ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.moveTo(400, 230);
+        ctx.lineTo(600, 230);
+        ctx.lineTo(600, 430);
+        ctx.lineTo(400, 430);
+        ctx.closePath();
+
+        ctx.fillStyle = '#7B1FA2'; 
+        ctx.fill();
+        ctx.strokeStyle = '#4A148C'; 
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(485, 230);
+        ctx.lineTo(515, 230);
+        ctx.lineTo(515, 430);
+        ctx.lineTo(485, 430);
+        ctx.closePath();
+
+        ctx.fillStyle = '#FFEB3B';
+        ctx.fill();
+        ctx.strokeStyle = '#FBC02D';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(390, 190);
+        ctx.lineTo(610, 190);
+        ctx.lineTo(610, 230);
+        ctx.lineTo(390, 230);
+        ctx.closePath();
+
+        ctx.fillStyle = '#8E24AA';
+        ctx.fill();
+        ctx.strokeStyle = '#4A148C';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(485, 190);
+        ctx.lineTo(515, 190);
+        ctx.lineTo(515, 230);
+        ctx.lineTo(485, 230);
+        ctx.closePath();
+
+        ctx.fillStyle = '#FFEB3B';
+        ctx.fill();
+        ctx.strokeStyle = '#FBC02D';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+     
+        ctx.beginPath();
+        ctx.moveTo(500, 190); 
+        ctx.lineTo(430, 140); 
+        ctx.lineTo(450, 190); 
+        ctx.closePath();
+
+        ctx.fillStyle = '#FDD835'; 
+        ctx.fill();
+        ctx.strokeStyle = '#FBC02D';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(500, 190);
+        ctx.lineTo(570, 140); 
+        ctx.lineTo(550, 190);
+        ctx.closePath();
+
+        ctx.fillStyle = '#FDD835'; 
+        ctx.fill();
+        ctx.strokeStyle = '#FBC02D';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+    </script>
+</body>
+</html>
