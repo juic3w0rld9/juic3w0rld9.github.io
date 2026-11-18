@@ -4,16 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuiceWRLD</title>
+    <title>JuiceWRLD - About</title>
     <link rel="stylesheet" href="juice.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
     <script>
-        $(function() {
-            $("#tabs").tabs();
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true
+            });
         });
     </script>
+
+    <style>
+        #accordion {
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        /* Purple header with yellow text */
+        .ui-accordion-header {
+            background: #4c1d95;
+            color: #facc15;
+            border: 1px solid #facc15;
+            font-weight: bold;
+        }
+
+        /* Active/hovered header styling */
+        .ui-accordion-header.ui-state-active,
+        .ui-accordion-header:hover {
+            background: #6b21a8;
+            color: #fef08a;
+            border: 1px solid #facc15;
+        }
+
+        /* Dark purple content box with soft yellow text */
+        .ui-accordion-content {  
+            background-color: #2e1065;
+            color: #fef9c3;
+            font-size: 11pt;  
+            line-height: 18pt;  
+            border: 1px solid #facc15;
+            border-top: none;
+        }  
+    </style>
 </head>
 <body>
 
@@ -32,28 +68,59 @@
             <h1>About Page</h1>
             <img src="fd.png" alt="About Image" style="width: 500px; height: auto;">
 
-            <div id="tabs" style="margin-top: 20px;">
-                <ul>
-                    <li><a href="#tabs-1">About Me</a></li>
-                    <li><a href="#tabs-2">Hobbies</a></li>
-                    <li><a href="#tabs-3">Favorite Artist</a></li>
-                </ul>
-                <div id="tabs-1">
-                    <p></p>
+            <div id="accordion">
+                <h3>About Me</h3>
+                <div>
+                    <p>Zup</p>
                 </div>
-                <div id="tabs-2">
-                    <p></p>
+
+                <h3>Hobbies</h3>
+                <div>
+                    <ul>
+                        <li>Listening to Music</li>
+                        <li>Gaming</li>
+                        <li>Eating</li>
+                    </ul>
                 </div>
-                <div id="tabs-3">
-                    <p></p>
+
+                <h3>Favorite Artist</h3>
+                <div>
+                    <p>Juice WRLD</p>
+                    <p>XXXTentacion</p>
+                    <p>Lil Peep</p>
+                    <p>G0uenji</p>
+                    <p>YNW Melly</p>
+                    <p>PnB Rock</p>
+                    <p>King Von</p>
+                    <p>Pop Smoke</p>
+                    <p>Polo G</p>
+                    <p>NLE Choppa</p>
+                    <p>Blockwork</p>
+                    <p>C Blu</p>
+                    <p>Lee Drilly</p>
+                    <p>DD Osama</p>
+                    <p>Notti Osama</p>
+                    <p>Sugarhill DDOT</p>
+                    <p>Kay Flock</p>
+                    <p>K1</p>
+                    <p>Kyle Richh</p>
+                    <p>Lil Uzi Vert</p>
+                    <p>Snoop Dogg</p>
+                    <p>Allan Walker</p>
+                    <p>Post Malone</p>
+                    <p>Lil Tjay</p>
+                    <p>Lil Tecca</p>
+                    <p>Nicki Minaj</p>
+
                 </div>
             </div>
 
             <p style="margin-top: 20px;"><a href="portfolio.html">Back</a></p>
         </div>
     </div>
+
     <footer>
-        	<p align="center">&copy; 2026 Juice Corp | FB: https://www.facebook.com/share/1J6yUuhxDy/ </p>
+        <p align="center">&copy; 2026 Juice Corp | FB: https://www.facebook.com/share/1J6yUuhxDy/ </p>
     </footer>
 
 </body>
