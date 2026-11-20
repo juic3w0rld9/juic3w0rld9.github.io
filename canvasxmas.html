@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Greeting Card</title>
+    <title>JuiceWRLD</title>
     <style>
         body {
             display: flex;
@@ -28,68 +28,50 @@
         const canvas = document.getElementById("cardCanvas");
         const ctx = canvas.getContext("2d");
 
-        function drawSnowman(offsetX, offsetY) {
-            ctx.fillStyle = "#e0e0e0";
-            ctx.beginPath();
-            ctx.arc(offsetX, offsetY + 60, 45, 0, Math.PI * 2);
-            ctx.fill();
+        function drawTree(offsetX, offsetY) {
+            
+            ctx.fillStyle = "#6d4c41";
+            ctx.fillRect(offsetX - 15, offsetY + 60, 30, 45);
 
+            ctx.fillStyle = "#1b5e20";
             ctx.beginPath();
-            ctx.arc(offsetX, offsetY, 32, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.beginPath();
-            ctx.arc(offsetX, offsetY - 45, 22, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.fillStyle = "#333333";
-            ctx.beginPath();
-            ctx.arc(offsetX - 7, offsetY - 50, 3, 0, Math.PI * 2);
-            ctx.arc(offsetX + 7, offsetY - 50, 3, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.fillStyle = "#d35400";
-            ctx.beginPath();
-            ctx.moveTo(offsetX, offsetY - 45);
-            ctx.lineTo(offsetX + 15, offsetY - 43);
-            ctx.lineTo(offsetX, offsetY - 40);
+            ctx.moveTo(offsetX, offsetY - 10);
+            ctx.lineTo(offsetX - 65, offsetY + 60);
+            ctx.lineTo(offsetX + 65, offsetY + 60);
             ctx.closePath();
             ctx.fill();
 
-            ctx.fillStyle = "#333333";
+            ctx.fillStyle = "#2e7d32";
             ctx.beginPath();
-            ctx.arc(offsetX, offsetY - 5, 2, 0, Math.PI * 2);
-            ctx.arc(offsetX, offsetY + 15, 2, 0, Math.PI * 2);
-            ctx.arc(offsetX, offsetY + 35, 2, 0, Math.PI * 2);
+            ctx.moveTo(offsetX, offsetY - 45);
+            ctx.lineTo(offsetX - 50, offsetY + 15);
+            ctx.lineTo(offsetX + 50, offsetY + 15);
+            ctx.closePath();
+            ctx.fill();
+
+            
+            ctx.fillStyle = "#388e3c";
+            ctx.beginPath();
+            ctx.moveTo(offsetX, offsetY - 80);
+            ctx.lineTo(offsetX - 35, offsetY - 25);
+            ctx.lineTo(offsetX + 35, offsetY - 25);
+            ctx.closePath();
+            ctx.fill();
+            
+            ctx.fillStyle = "#fbc02d";
+            ctx.beginPath();
+            ctx.arc(offsetX, offsetY - 85, 8, 0, Math.PI * 2);
             ctx.fill();
         }
 
-        drawSnowman(200, 240);
+        drawTree(200, 240);
 
-        ctx.fillStyle = "#1a52b8";
+        ctx.fillStyle = "purple";
         ctx.font = "bold 28px Arial";
         ctx.textAlign = "left";
         
-        ctx.fillText("X-Mast List", 320, 210);
+        ctx.fillText("XMast List", 320, 210);
         ctx.fillText("Merry Christmas", 320, 250);
-
-        function drawBlueCircles() {
-            for (let i = 0; i < 15; i++) {
-                const x = Math.random() * 300 + 450;
-                const y = Math.random() * 400 + 50;
-                const radius = Math.random() * 4 + 2;
-                
-                const hue = Math.floor(Math.random() * 40) + 195;
-                const lightness = Math.floor(Math.random() * 50) + 35;
-                ctx.fillStyle = "hsl(" + hue + ", 85%, " + lightness + "%)";
-                
-                ctx.beginPath();
-                ctx.arc(x, y, radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        drawBlueCircles();
     </script>
     <a href ="portfolio.html">Back</a>
 </body>
