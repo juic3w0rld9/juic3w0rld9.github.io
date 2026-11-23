@@ -1,33 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuiceWRLD</title>
-    <link rel="stylesheet" href="juice.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JuiceWRLD</title>
+  <link rel="stylesheet" href="juice.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #780ad3;
+      margin: 0;
+      padding: 20px;
+      color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-header img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .carousel {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .slides {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+      border-radius: 8px;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 24px;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+
+    .nav:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 8px;
+    }
+
+    .next {
+      right: 8px;
+    }
+
+    .dots {
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #b8b8b8;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #fef600;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .back-link a {
+      color: #fef600;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li class="nav-item"><a href="juice.html">Home</a></li>
-            <li class="nav-item"><a href="about.html">About</a></li>
-            <li class="nav-item active"><a href="gallery.html">Gallery</a></li>
-            <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li class="nav-item"><a href="juice.html">Home</a></li>
+      <li class="nav-item"><a href="about.html">About</a></li>
+      <li class="nav-item active"><a href="gallery.html">Gallery</a></li>
+      <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <div id="gallery" class="page-content active">
+  <div class="container">
+    <div id="gallery" class="page-content active">
+      <div class="profile-header">
+        <h1>Gallery Page</h1>
+        <img src="juicepp.png" alt="JuiceWRLD Profile">
+      </div>
 
-            <h1>Gallery Page</h1>
-            <img src="juicepp.png" style="width: 200px; border-radius: 10px;">
+      <div class="carousel" id="carousel">
+        <div class="slides">
+          <figure class="slide">
+            <img src="Robbery.jpeg" alt="Death Race For Love">
+            <figcaption>Death Race For Love</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="Juice WRLD Fighting Demons Art Cover.jpeg" alt="Fighting Demons">
+            <figcaption>Fighting Demon</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="Juice Wrld - [Album] Goodbye & Good Riddance.jpeg" alt="Goodbye & Good Riddance">
+            <figcaption>GoodBye & Good Riddance</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="Juice wrld Album Cover.jpeg" alt="Legends Never Die">
+            <figcaption>Legends Never Die</figcaption>
+          </figure>
+
+          <button class="nav prev" type="button" aria-label="Previous slide">&#10094;</button>
+          <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
         </div>
-    </div>
-    <footer>
-        	<p align="center">&copy; 2026 Juice Corp | FB: https://www.facebook.com/share/1J6yUuhxDy/ </p>
-    </footer>
 
+        <div class="dots"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Juice Corp | FB: https://www.facebook.com/share/1J6yUuhxDy/</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const $carousel = $("#carousel");
+      const $slides   = $carousel.find(".slide");
+      const $dotsBox  = $carousel.find(".dots");
+      const total     = $slides.length;
+      const FADE_TIME = 500;  
+      const DELAY     = 4000;
+
+      let current = 0;    
+      let timer   = null; 
+
+      $slides.hide().eq(0).show();
+
+      $slides.each(function (i) {
+        $("<button>")
+          .attr({ type: "button", "aria-label": "Go to slide " + (i + 1) })
+          .addClass("dot" + (i === 0 ? " active" : ""))
+          .data("index", i)
+          .appendTo($dotsBox);
+      });
+
+      const $dots = $dotsBox.find(".dot");
+
+      function showSlide(index) {
+        if (index === current) return; 
+
+        $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+        $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
+        $dots.removeClass("active").eq(index).addClass("active");
+
+        current = index;
+      }
+
+      function nextSlide() {
+        showSlide((current + 1) % total);
+      }
+
+      function prevSlide() {
+        showSlide((current - 1 + total) % total);
+      }
+
+      $carousel.on("click", ".next", nextSlide);
+      $carousel.on("click", ".prev", prevSlide);
+
+      $dotsBox.on("click", ".dot", function () {
+        showSlide($(this).data("index"));
+      });
+
+      function startAutoplay() {
+        stopAutoplay();
+        timer = setInterval(nextSlide, DELAY);
+      }
+
+      function stopAutoplay() {
+        clearInterval(timer);
+      }
+
+      $carousel
+        .on("mouseenter", stopAutoplay)
+        .on("mouseleave", startAutoplay);
+
+      startAutoplay();
+
+      $(document).on("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+          nextSlide();
+        } else if (event.key === "ArrowLeft") {
+          prevSlide();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
