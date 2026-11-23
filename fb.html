@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JuiceWRLD</title>
+  
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: system-ui, -apple-system, sans-serif;    
+}
+
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: start; 
+  align-items: stretch;
+  align-content: stretch;
+  gap: 25px;
+  min-height: 300px;
+  padding: 16px;
+  border: 3px solid #6b21a8;
+}
+
+.child {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto; 
+  padding: 16px;
+  background-color: #ff0000;
+  border: 1px solid #000000;
+}
+
+.peacemaker {
+  background-color: #0400ff;
+  border-color: #000000;
+
+}
+
+.rebel {
+  background-color: #00eaff;
+  border-color: #000000;
+
+}
+
+.favorite {
+  background-color: #a200ff;
+  border-color: #d9ff00;
+}
+  </style>
+</head>
+<body>
+
+  <div class="parent">
+    <div class="child oldest">1 Oldest Child</div>
+    <div class="child peacemaker">2 Peacemaker Child</div>
+    <div class="child rebel">3 Rebel Child</div>
+    <div class="child favorite">4 Favorite Child</div>
+  </div>
+   <a href = "portfolio.html"> Back </a>
+</body>
+</html>
