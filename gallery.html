@@ -6,9 +6,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JuiceWRLD</title>
     <link rel="stylesheet" href="juice.css">
+    
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <style>
+        .carousel-wrapper {
+            width: 100%;
+            max-width: 720px;
+            margin: 24px auto 40px;
+            padding: 0 20px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+            overflow: hidden;
+        }
+        
+        .slides {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            background-color: #0f172a;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: none; 
+        }
+
+        .slide:first-child {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 12px 16px;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background:  #4a1e78;
+            color: #ffffff;
+            border: none;
+            font-size: 18px;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .nav:hover {
+            background: var(--accent);
+        }
+
+        .prev {
+            left: 14px;
+        }
+
+        .next {
+            right: 14px;
+        }
+        
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background: #4a1e78;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            padding: 0;
+        }   
+
+        .dot.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 600px) {
+            .slides {
+                height: 340px;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <header>
     <nav>
         <ul>
             <li class="nav-item"><a href="juice.html">Home</a></li>
@@ -18,11 +149,115 @@
             <li class="nav-item"><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <h1>Sup</h1>
+    </header>
 
+    <main class="hero">
+        <div class="carousel-wrapper">
+            <div class="carousel" id="carousel">
+                <div class="slides">
+      <figure class="slide">
+        <img src="juice1.jpeg" alt="Describe image 1">
+        <figcaption></figcaption>
+      </figure>
+      <figure class="slide">
+        <img src="juice3.jpeg" alt="Describe image 2">
+        <figcaption></figcaption>
+      </figure>
+      <figure class="slide">
+        <img src="juice3.jpeg" alt="Describe image 3">
+        <figcaption>Family</figcaption>
+      </figure>
+      <figure class="slide">
+        <img src="juice2.jpeg" alt="Describe image 4">
+        <figcaption>Homie</figcaption>
+      </figure>
+
+                    <button class="nav prev" type="button" aria-label="Previous slide">&#10094;</button>
+                    <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
+                </div>
+            </div>
+            <div class="dots"></div>
+        </div>
+    </main>
+
+    </footer>
+
+
+    <script>
+        $(document).ready(function () {
+            const $slides = $('.slide');
+            const totalSlides = $slides.length;
+            let currentIndex = 0;
+            let timer = null;
+            const intervalTime = 4000;
+            
+            $slides.each(function (index) {
+                const $dot = $('<button class="dot" type="button" aria-label="Slide ' + (index + 1) + '"></button>');
+                if (index === 0) $dot.addClass('active');
+                $('.dots').append($dot);
+            });
+
+            const $dots = $('.dot');
+            
+            function showSlide(index) {
+                currentIndex = (index + totalSlides) % totalSlides;
+                $slides.stop(true, true).fadeOut(400);
+                $slides.eq(currentIndex).stop(true, true).fadeIn(400);
+                $dots.removeClass('active').eq(currentIndex).addClass('active');
+            }
+
+            function startAutoplay() {
+                stopAutoplay(); 
+                timer = setInterval(function () {
+                    showSlide(currentIndex + 1);
+                }, intervalTime);
+            }
+
+            function stopAutoplay() {
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+            }
+
+            function resetAutoplay() {
+                stopAutoplay();
+                startAutoplay();
+            }
+
+            $('.next').on('click', function () {
+                showSlide(currentIndex + 1);
+                resetAutoplay();
+            });
+
+            $('.prev').on('click', function () {
+                showSlide(currentIndex - 1);
+                resetAutoplay();
+            });
+
+            $('.dots').on('click', '.dot', function () {
+                const index = $(this).index();
+                showSlide(index);
+                resetAutoplay();
+            });
+
+            startAutoplay();
+            
+            $('#carousel').on('mouseenter', stopAutoplay).on('mouseleave', startAutoplay);
+
+            $(document).on('keydown', function (e) {
+                if (e.key === 'ArrowRight') {
+                    showSlide(currentIndex + 1);
+                    resetAutoplay();
+                } else if (e.key === 'ArrowLeft') {
+                    showSlide(currentIndex - 1);
+                    resetAutoplay();
+                }
+            });
+        });
+    </script>
     <footer>
         	<p align="center">&copy; Juice Corp | Jarad </p>
     </footer>
-
 </body>
 </html>
