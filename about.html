@@ -1,114 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuiceWRLD - About</title>
-    <link rel="stylesheet" href="juice.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#accordion").accordion({
-                collapsible: true
-            });
-        });
-    </script>
-
-    <style>
-        #accordion {
-            max-width: 700px;
-            margin: 30px auto;
-            text-align: left;
-        }
-
-        .ui-accordion-header {
-            background: #4c1d95;
-            color: #facc15;
-            border: 1px solid #facc15;
-            font-weight: bold;
-        }
-
-        .ui-accordion-header.ui-state-active,
-        .ui-accordion-header:hover {
-            background: #6b21a8;
-            color: #fef08a;
-            border: 1px solid #facc15;
-        }
-
-        .ui-accordion-content {  
-            background-color: #2e1065;
-            color: #fef9c3;
-            font-size: 11pt;  
-            line-height: 18pt;  
-            border: 1px solid #facc15;
-            border-top: none;
-        }  
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JuiceWRLD</title>
+<link rel="stylesheet" href="juice.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+<script>
+$(function () {
+  $("#accordion").accordion({ collapsible: true });
+});
+</script>
+<style>
+#accordion {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  text-align: left;
+}
+.ui-accordion-header {
+  background: #4c1d95;
+  color: #facc15;
+  border: 1px solid #facc15;
+  font-weight: bold;
+}
+.ui-accordion-header.ui-state-active,
+.ui-accordion-header:hover {
+  background: #6b21a8;
+  color: #fef08a;
+  border: 1px solid #facc15;
+}
+.ui-accordion-content {
+  background-color: #2e1065;
+  color: #fef9c3;
+  font-size: 11pt;
+  line-height: 18pt;
+  border: 1px solid #facc15;
+  border-top: none;
+}
+.about-wrapper {
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.profile-card {
+  width: 310px;
+  margin-top: 6px;
+  background-color: #2e1065;
+  border: 1px solid #facc15;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.profile-image-wrapper {
+  width: 220px;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #facc15;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 18px;
+}
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-card h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #facc15;
+  margin-bottom: 14px;
+}
+.profile-details {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid #facc15;
+  padding-top: 16px;
+}
+.profile-details p {
+  font-size: 13px;
+  color: #fef9c3;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.profile-details span {
+  font-weight: 700;
+  color: #ffffff;
+}
+</style>
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li class="nav-item"><a href="juice.html">Home</a></li>
-            <li class="nav-item active"><a href="about.html">About</a></li>
-            <li class="nav-item"><a href="gallery.html">Gallery</a></li>
-            <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div id="about" class="page-content active">
-            <img src="fd.png" alt="About Image" style="width: 500px; height: auto;">
-
-            <div id="accordion">
-                <h3>About Me</h3>
-                <div>
-                    <p>HiI Im Jarad love Litsening To Juice WRLD</p>
-                </div>
-
-                <h3>Hobbies</h3>
-                <div>
-                    <ul>
-                        <li>Listening to Music</li>
-                        <li>Playing Codm</li>
-                        <li>Eating</li>
-                        <li>Sleeping</li>
-                        <li>Ragebaiting</li>
-                    </ul>
-                </div>
-
-                <h3>Favorite Artist</h3>
-                <div>
-                    <p><strong>Juice WRLD</strong></p>
-                    <p><strong>Lil Peep</strong></p>
-                    <p><strong>XXXTentacion</strong></p>
-                    <hr style="border-color: #facc15; opacity: 0.4;">
-                    
-                </div>
-
-                <h3>Favorite songs</h3>
-                <div>
-                    <p>Jeffrey</p>
-                    <p>Unexplainable</p>
-                    <p>In The Air</p>
-                    <p>Contained</p>
-                    <p>End Of The Road</p>
-                    <p>Wasted</p>
-                    <p>Rich And Blind</p>
-                    <p>Lobster Pizza</p>
-                    <p>Don't Go There</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p align="center">&copy; Juice Corp | Jarad </p>
-    </footer>
-
+<nav>
+<ul>
+<li class="nav-item"><a href="juice.html">Home</a></li>
+<li class="nav-item active"><a href="about.html">About</a></li>
+<li class="nav-item"><a href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
+<li class="nav-item"><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="container">
+<div id="about" class="page-content active">
+<div class="about-wrapper">
+<div id="accordion">
+<h3>About Me</h3>
+<div>
+<p>Hi Im Jarad love Litsening To Juice WRLD</p>
+</div>
+<h3>Hobbies</h3>
+<div>
+<ul>
+<li>Listening to Music</li>
+<li>Playing Codm</li>
+<li>Eating</li>
+<li>Sleeping</li>
+<li>Ragebaiting</li>
+</ul>
+</div>
+<h3>Favorite Artist</h3>
+<div>
+<p><strong>Juice WRLD</strong></p>
+<p><strong>Lil Peep</strong></p>
+<p><strong>XXXTentacion</strong></p>
+<hr style="border-color: #f0c411; opacity: 0.4;">
+</div>
+<h3>Favorite songs</h3>
+<div>
+<p>Jeffrey</p>
+<p>Unexplainable</p>
+<p>In The Air</p>
+<p>Contained</p>
+<p>End Of The Road</p>
+<p>Wasted</p>
+<p>Rich And Blind</p>
+<p>Lobster Pizza</p>
+<p>Don't Go There</p>
+</div>
+</div>
+<div class="profile-card">
+<div class="profile-image-wrapper">
+<img src="juice5.jpeg" alt="JuiceWRLD">
+</div>
+<h2>JuiceWRLD</h2>
+<div class="profile-details">
+<p><span>School</span> Governor Juanito Reyes Remulla Senior High School</p>
+<p><span>Strand & Section</span> TVL - ICT (Section Cooper)</p>
+<p><span>Junkie</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<p align="center">&copy; Juice Corp | Jarad</p>
+</footer>
 </body>
 </html>
