@@ -1,31 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuiceWRLD</title>
-    <link rel="stylesheet" href="juice.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JuiceWRLD</title>
+  <link rel="stylesheet" href="juice.css">
+  <style>
+    .contact-page-container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .contact-page-container h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #2e104d;
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background-color: #2e1065;
+      border: 1px solid #facc15;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      text-align: left;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .info-card:hover {
+      border-color: #fef08a;
+      box-shadow: 0 6px 15px rgba(250, 204, 21, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .info-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #facc15;
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fef9c3;
+    }
+
+    .info-value a {
+      color: #facc15;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .info-value a:hover {
+      color: #fef08a;
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
+  <nav>
+    <ul>
+      <li class="nav-item"><a href="juice.html">Home</a></li>
+      <li class="nav-item"><a href="about.html">About</a></li>
+      <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+      <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item active"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div id="contact" class="page-content active">
+      <div class="contact-page-container">
 
-    <nav>
-        <ul>
-            <li class="nav-item"><a href="juice.html">Home</a></li>
-            <li class="nav-item"><a href="about.html">About</a></li>
-            <li class="nav-item"><a href="gallery.html">Gallery</a></li>
-            <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item active"><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div id="contact" class="page-content active">
-            <h1>Contact Page</h1>
+        <div class="info-card">
+          <div class="info-label">Email Address</div>
+          <div class="info-value">juic3w0rld9@gmail.com</div>
         </div>
+        <div class="info-card">
+          <div class="info-label">Facebook Name</div>
+          <div class="info-value">Melvin Nosis</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Phone Number</div>
+          <div class="info-value">09301771210</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Address</div>
+          <div class="info-value"></div>
+        </div>
+      </div>
     </div>
-    <footer>
-        	<p align="center">&copy; 2026 Juice Corp | FB: https://www.facebook.com/share/1J6yUuhxDy/ </p>
-    </footer>
+  </div>
+  <footer>
+    <p align="center">&copy; Juice Corp | Jarad </p>
 
+  </footer>
 </body>
+
 </html>
