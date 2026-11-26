@@ -1,49 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuiceWRLD</title>
+    <title>JuiceWRLD - Gallery</title>
     <link rel="stylesheet" href="juice.css">
-    
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-
     <style>
+        :root {
+            --surface: #000000;
+            --border-yellow: #fef600;
+            --accent: #780ad3;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 24px;
+            color: #ffffff;
+        }
+
         .carousel-wrapper {
             width: 100%;
-            max-width: 720px;
+            max-width: 850px;
             margin: 24px auto 40px;
             padding: 0 20px;
+            box-sizing: border-box;
         }
 
         .carousel {
             position: relative;
             width: 100%;
             background: var(--surface);
-            border: 1px solid var(--border-subtle);
+            border: 2px solid var(--border-yellow);
             border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 25px -5px rgba(254, 246, 0, 0.15);
             overflow: hidden;
         }
-        
+
         .slides {
             position: relative;
-            height: 450px;
+            aspect-ratio: 16 / 9;
             width: 100%;
-            background-color: #0f172a;
+            background-color: #4a1e78;
+            overflow: hidden;
         }
 
         .slide {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             margin: 0;
-            display: none; 
+            display: none;
         }
 
         .slide:first-child {
@@ -57,41 +67,43 @@
             display: block;
         }
 
-
         figcaption {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             padding: 12px 16px;
             text-align: center;
-            background: rgba(15, 23, 42, 0.72);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(4px);
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             letter-spacing: 0.3px;
+            border-top: 1px solid var(--border-yellow);
         }
-        
+
+        figcaption:empty {
+            display: none;
+        }
 
         .nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background:  #4a1e78;
+            background: #4a1e78;
             color: #ffffff;
-            border: none;
+            border: 1px solid var(--border-yellow);
             font-size: 18px;
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 10;
             border-radius: 8px;
-            transition: all 0.2s ease;
+            transition: background 0.2s ease;
         }
 
         .nav:hover {
@@ -105,72 +117,82 @@
         .next {
             right: 14px;
         }
-        
 
         .dots {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 16px;
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            border: none;
+            border: 2px solid var(--border-yellow);
             background: #4a1e78;
             cursor: pointer;
             transition: all 0.25s ease;
             padding: 0;
-        }   
-
-        .dot.active {
-            background: var(--accent);
-            transform: scale(1.2);
         }
 
-        @media (max-width: 600px) {
-            .slides {
-                height: 340px;
-            }
+        .dot.active {
+            background: #a855f7;
+            border-color: var(--border-yellow);
+            transform: scale(1.25);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .back-link a {
+            color: var(--border-yellow);
+        }
+
+        footer p {
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
 
     <header>
-    <nav>
-        <ul>
-            <li class="nav-item"><a href="juice.html">Home</a></li>
-            <li class="nav-item"><a href="about.html">About</a></li>
-            <li class="nav-item active"><a href="gallery.html">Gallery</a></li>
-            <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="juice.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item active"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="hero">
+
         <div class="carousel-wrapper">
             <div class="carousel" id="carousel">
                 <div class="slides">
-      <figure class="slide">
-        <img src="juice1.jpeg" alt="Describe image 1">
-        <figcaption></figcaption>
-      </figure>
-      <figure class="slide">
-        <img src="juice3.jpeg" alt="Describe image 2">
-        <figcaption></figcaption>
-      </figure>
-      <figure class="slide">
-        <img src="juice3.jpeg" alt="Describe image 3">
-        <figcaption>Family</figcaption>
-      </figure>
-      <figure class="slide">
-        <img src="juice2.jpeg" alt="Describe image 4">
-        <figcaption>Homie</figcaption>
-      </figure>
+                    <figure class="slide">
+                        <img src="junkie999.jpeg" alt="Juice WRLD Photo 1">
+                        <figcaption>Me</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="juicef.jpeg" alt="Juice WRLD Family">
+                        <figcaption>Future me</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="Juice wrld.jpeg" alt="Juice WRLD Family">
+                        <figcaption>JuiceWRLD</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="juice2.jpeg" alt="Death Race For Love">
+                        <figcaption>Homie</figcaption>
+                    </figure>
 
                     <button class="nav prev" type="button" aria-label="Previous slide">&#10094;</button>
                     <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
@@ -180,37 +202,50 @@
         </div>
     </main>
 
+    <footer>
+        <p>&copy; Juice Corp | Jarad</p>
     </footer>
-
 
     <script>
         $(document).ready(function () {
-            const $slides = $('.slide');
-            const totalSlides = $slides.length;
-            let currentIndex = 0;
+            const $carousel = $('#carousel');
+            const $slides = $carousel.find('.slide');
+            const $dotsBox = $('.dots');
+            const total = $slides.length;
+            const FADE_TIME = 400;
+            const DELAY = 4000;
+
+            let current = 0;
             let timer = null;
-            const intervalTime = 4000;
-            
-            $slides.each(function (index) {
-                const $dot = $('<button class="dot" type="button" aria-label="Slide ' + (index + 1) + '"></button>');
-                if (index === 0) $dot.addClass('active');
-                $('.dots').append($dot);
+
+            $slides.hide().eq(0).show();
+
+            $slides.each(function (i) {
+                $('<button>')
+                    .attr({ type: 'button', 'aria-label': 'Go to slide ' + (i + 1) })
+                    .addClass('dot' + (i === 0 ? ' active' : ''))
+                    .data('index', i)
+                    .appendTo($dotsBox);
             });
 
-            const $dots = $('.dot');
-            
+            const $dots = $dotsBox.find('.dot');
+
             function showSlide(index) {
-                currentIndex = (index + totalSlides) % totalSlides;
-                $slides.stop(true, true).fadeOut(400);
-                $slides.eq(currentIndex).stop(true, true).fadeIn(400);
-                $dots.removeClass('active').eq(currentIndex).addClass('active');
+                const nextIndex = (index + total) % total;
+                if (nextIndex === current) return;
+
+                $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+                $slides.eq(nextIndex).stop(true, true).fadeIn(FADE_TIME);
+                $dots.removeClass('active').eq(nextIndex).addClass('active');
+
+                current = nextIndex;
             }
 
             function startAutoplay() {
-                stopAutoplay(); 
+                stopAutoplay();
                 timer = setInterval(function () {
-                    showSlide(currentIndex + 1);
-                }, intervalTime);
+                    showSlide(current + 1);
+                }, DELAY);
             }
 
             function stopAutoplay() {
@@ -225,39 +260,38 @@
                 startAutoplay();
             }
 
-            $('.next').on('click', function () {
-                showSlide(currentIndex + 1);
+            $carousel.on('click', '.next', function () {
+                showSlide(current + 1);
                 resetAutoplay();
             });
 
-            $('.prev').on('click', function () {
-                showSlide(currentIndex - 1);
+            $carousel.on('click', '.prev', function () {
+                showSlide(current - 1);
                 resetAutoplay();
             });
 
-            $('.dots').on('click', '.dot', function () {
-                const index = $(this).index();
-                showSlide(index);
+            $dotsBox.on('click', '.dot', function () {
+                showSlide($(this).data('index'));
                 resetAutoplay();
             });
 
-            startAutoplay();
-            
-            $('#carousel').on('mouseenter', stopAutoplay).on('mouseleave', startAutoplay);
+            $carousel
+                .on('mouseenter', stopAutoplay)
+                .on('mouseleave', startAutoplay);
 
             $(document).on('keydown', function (e) {
                 if (e.key === 'ArrowRight') {
-                    showSlide(currentIndex + 1);
+                    showSlide(current + 1);
                     resetAutoplay();
                 } else if (e.key === 'ArrowLeft') {
-                    showSlide(currentIndex - 1);
+                    showSlide(current - 1);
                     resetAutoplay();
                 }
             });
+
+            startAutoplay();
         });
     </script>
-    <footer>
-        	<p align="center">&copy; Juice Corp | Jarad </p>
-    </footer>
 </body>
+
 </html>
